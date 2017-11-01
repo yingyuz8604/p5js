@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+
+    <script>
+        var shade = 255;
+        
+        
+        function setup() {
+            createCanvas(800, 600);
+            width = 800;
+            height = 600;
+        }
+
+        function draw() {
+        
+        }
+
+        function mouseMoved() {
+            strokeWeight(5);
+            stroke(random(100, 255), random(100, 255), random(100, 255)); //colors of the lines
+            fill(random(100, 255), random(100, 255), random(100, 255));
+            ellipse(mouseX, mouseY, 100, 100); //circle that move w/ the mouse
+            line(mouseX, mouseY, 0, 0); //lines that appear
+            line(mouseX, mouseY, width, 0); //lines that appear
+            line(mouseX, mouseY, 0, height); //lines that appear
+            line(mouseX, mouseY, width, height); //lines that appear
+
+        }
+
+        function keyPressed() {
+        background(random(100, 255), random(100, 255), random(100, 255)); //background color change
+        }
+        
+        function mouseDragged(){
+            strokeWeight(2);
+            stroke(random(100, 255), random(100, 255), random(100, 255)); //colors of the lines
+            fill(random(100, 255), random(100, 255), random(100, 255));//diff. color circles
+            ellipse(width-mouseX,height-mouseY,100,100); //circle the goes the opposite direction
+            line(mouseX, mouseY, 0, 0); //lines that appear
+            line(mouseX, mouseY, width, 0); //lines that appear
+            line(mouseX, mouseY, 0, height); //lines that appear
+            line(mouseX, mouseY, width, height); //lines that appear
+        }
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/yingyuz8604/p5js/blob/master/interaction.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
