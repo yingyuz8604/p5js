@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>Conditional</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+    
+    <script>
+    var up , down;
+        function setup() {
+            createCanvas(800,700);
+            background(255)
+            up = 50;
+            down = 50;
+        }
+
+        function draw() {
+            //canvas setup 
+            noStroke();
+            ellipseMode(CENTER)
+            fill(255,0,0); // red 
+            ellipse(50,50,50,50);
+            fill(250,150,10); // orange
+            ellipse(50,130,50,50);
+            fill(255,255,0); // yellow
+            ellipse(50,210,50,50);
+            fill(0,255,0); //green
+            ellipse(50,290,50,50);
+            fill(0,0,255); // blue
+            ellipse(50,370,50,50);
+            fill(130,50,220); //purple
+            ellipse(50,450,50,50);
+            fill(0); // black
+            ellipse(50,530,50,50);
+            
+            //text 
+            fill(200);
+            textSize(40);
+            text("r", 43, 60);
+            text("o", 40, 140);
+            text("y", 40, 220);
+            text("g", 40, 295);
+            text("b", 40, 385);
+            text("p", 40, 460);
+            text("k", 40, 545);
+            text("Drag to erase", 40, 620);
+        }
+
+        function mouseDragged(){
+            //color of circle base on what key you press
+            noStroke();
+            if (key =="r") { 
+                fill(255,0,0);
+            } else if (key == "o") {
+                fill(250,150,10);
+            } else if (key == "y") {
+                fill(255,255,0);
+            } else if (key == "g") {
+                fill(0,255,0);  
+            } else if (key == "b") {
+                fill(0,0,255); 
+            } else if (key == "k") {
+                fill(0);  
+            } else if (key == "p") {
+                fill(130,50,220);
+            } else {
+                fill(255);
+            }
+            
+            ellipse(mouseX,mouseY,up,down);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/yingyuz8604/p5js/blob/master/conditional.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
